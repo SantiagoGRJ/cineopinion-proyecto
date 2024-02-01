@@ -13,6 +13,7 @@ class ViewsController extends Controller
     public function index()
     {
         //
+       return view('movies.index');
     }
 
     /**

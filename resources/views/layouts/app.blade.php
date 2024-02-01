@@ -29,7 +29,15 @@
 
             <!-- Page Content -->
             <main>
+                @yield('content')
+                @yield('css')
+                @yield('js')
+
+                @if (isset($slot))
                 {{ $slot }}
+                @endif
+
+
             </main>
         </div>
     </body>
