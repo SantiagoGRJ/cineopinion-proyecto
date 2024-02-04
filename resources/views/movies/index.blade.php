@@ -2,18 +2,18 @@
 
 @section('css')
     <!--
-        - favicon
-      -->
+            - favicon
+          -->
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
     <!--
-        - custom css link
-      -->
+            - custom css link
+          -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <!--
-      - google font link
-    -->
+          - google font link
+        -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,8 +24,8 @@
     <body id="top">
 
         <!--
-          - #HEADER
-        -->
+              - #HEADER
+            -->
 
         <header class="header" data-header>
             <div class="container">
@@ -134,8 +134,8 @@
             <article>
 
                 <!--
-              - #HERO
-            -->
+                  - #HERO
+                -->
 
                 <section class="hero">
                     <div class="container">
@@ -161,8 +161,8 @@
 
 
                 <!--
-              - #UPCOMING
-            -->
+                  - #UPCOMING
+                -->
 
                 <section class="upcoming">
                     <div class="container">
@@ -172,7 +172,8 @@
                             <div class="title-wrapper">
                                 <p class="section-subtitle"></p>
 
-                                <h2 class="h2 section-title hero-title">Mejores <strong> 100 Películas </strong> del Momento</h2>
+                                <h2 class="h2 section-title hero-title">Mejores <strong> 100 Películas </strong> del Momento
+                                </h2>
                             </div>
 
 
@@ -180,43 +181,8 @@
 
                         </div>
 
-                        <ul class="movies-list  has-scrollbar">
+                        <ul id="top-cien" class="movies-list  has-scrollbar">
 
-                            <li>
-                                <div class="movie-card">
-
-                                    <a href="peli1.html">
-                                        <figure class="card-banner">
-                                            <img src="./assets/images/upcoming-1.png" alt="The Northman movie poster">
-                                        </figure>
-                                    </a>
-
-                                    <div class="title-wrapper">
-                                        <a href="peli1.html">
-                                            <h3 class="card-title">The Northman</h3>
-                                        </a>
-
-                                        <time datetime="2022">2022</time>
-                                    </div>
-
-                                    <div class="card-meta">
-                                        <div class="badge badge-outline">HD</div>
-
-                                        <div class="duration">
-                                            <ion-icon name="time-outline"></ion-icon>
-
-                                            <time datetime="PT137M">137 min</time>
-                                        </div>
-
-                                        <div class="rating">
-                                            <ion-icon name="star"></ion-icon>
-
-                                            <data>8.5</data>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </li>
 
 
 
@@ -230,86 +196,86 @@
 
 
                 <!--
-              - #SERVICE
-            -->
+                  - #SERVICE
+                -->
 
                 <!-- <section class="service">
-              <div class="container">
+                  <div class="container">
 
-                <div class="service-banner">
-                  <figure>
-                    <img src="./assets/images/service-banner.jpg" alt="HD 4k resolution! only $3.99">
-                  </figure>
+                    <div class="service-banner">
+                      <figure>
+                        <img src="./assets/images/service-banner.jpg" alt="HD 4k resolution! only $3.99">
+                      </figure>
 
-                  <a href="./assets/images/service-banner.jpg" download class="service-btn">
-                    <span>Download</span>
+                      <a href="./assets/images/service-banner.jpg" download class="service-btn">
+                        <span>Download</span>
 
-                    <ion-icon name="download-outline"></ion-icon>
-                  </a>
-                </div>
+                        <ion-icon name="download-outline"></ion-icon>
+                      </a>
+                    </div>
 
-                <div class="service-content">
+                    <div class="service-content">
 
-                  <p class="service-subtitle">NUESTROS SERVICIOS</p>
+                      <p class="service-subtitle">NUESTROS SERVICIOS</p>
 
-                  <h2 class="h2 service-title">VER RESEÑAS DE TUS PELICULAS FAVORITAS</h2>
+                      <h2 class="h2 service-title">VER RESEÑAS DE TUS PELICULAS FAVORITAS</h2>
 
-                  <p class="service-text">
-                    Aca podrás ver las reseñas de tus peliculas favoritas de igual forma podrar ver el trailer y donde puedes encontrar la pelicula en una calidad buena, de igual forma podrás descargar el poster de las peliculas en buena calidad.
-                  </p>
+                      <p class="service-text">
+                        Aca podrás ver las reseñas de tus peliculas favoritas de igual forma podrar ver el trailer y donde puedes encontrar la pelicula en una calidad buena, de igual forma podrás descargar el poster de las peliculas en buena calidad.
+                      </p>
 
-                  <ul class="service-list">
+                      <ul class="service-list">
 
-                    <li>
-                      <div class="service-card">
+                        <li>
+                          <div class="service-card">
 
-                        <div class="card-icon">
-                          <ion-icon name="tv"></ion-icon>
-                        </div>
+                            <div class="card-icon">
+                              <ion-icon name="tv"></ion-icon>
+                            </div>
 
-                        <div class="card-content">
-                          <h3 class="h3 card-title">Disfrútalo en tu televisor.</h3>
+                            <div class="card-content">
+                              <h3 class="h3 card-title">Disfrútalo en tu televisor.</h3>
 
-                          <p class="card-text">
+                              <p class="card-text">
 
-                          </p>
-                        </div>
+                              </p>
+                            </div>
 
-                      </div>
-                    </li>
+                          </div>
+                        </li>
 
-                    <li>
-                      <div class="service-card">
+                        <li>
+                          <div class="service-card">
 
-                        <div class="card-icon">
-                          <ion-icon name="videocam"></ion-icon>
-                        </div>
+                            <div class="card-icon">
+                              <ion-icon name="videocam"></ion-icon>
+                            </div>
 
-                        <div class="card-content">
-                          <h3 class="h3 card-title">Míralo en todas partes.</h3>
+                            <div class="card-content">
+                              <h3 class="h3 card-title">Míralo en todas partes.</h3>
 
-                          <p class="card-text">
+                              <p class="card-text">
 
-                          </p>
-                        </div>
+                              </p>
+                            </div>
 
-                      </div>
-                    </li>
+                          </div>
+                        </li>
 
-                  </ul>
+                      </ul>
 
-                </div>
+                    </div>
 
-              </div>
-            </section> -->
+                  </div>
+                </section> -->
 
 
 
 
 
                 <!--
-              - #TOP RATED
-            -->
+                  - #TOP RATED
+                -->
 
                 <section class="top-rated">
                     <div class="container">
@@ -325,41 +291,7 @@
 
                         <ul id="movie_rated" class="movies-list">
 
-                            <li>
-                                <div class="movie-card">
 
-                                  <a href="PELICULA1.html">
-                                    <figure class="card-banner">
-                                      <img src="./assets/images/PELICULA1.jpg" alt="">
-                                    </figure>
-                                  </a>
-
-                                  <div class="title-wrapper">
-                                    <a href="./movie-details.html">
-                                      <h3 class="card-title">resident evil the final chapter</h3>
-                                    </a>
-
-                                    <time datetime="2022">2017</time>
-                                  </div>
-
-                                  <div class="card-meta">
-                                    <div class="badge badge-outline">2K</div>
-
-                                    <div class="duration">
-                                      <ion-icon name="time-outline"></ion-icon>
-
-                                      <time datetime="PT122M">106 min</time>
-                                    </div>
-
-                                    <div class="rating">
-                                      <ion-icon name="star"></ion-icon>
-
-                                      <data>7.8</data>
-                                    </div>
-                                  </div>
-
-                                </div>
-                              </li>
 
 
 
@@ -375,8 +307,8 @@
 
 
                 <!--
-              - #TV SERIES
-            -->
+                  - #TV SERIES
+                -->
 
                 <section class="tv-series">
                     <div class="container">
@@ -385,88 +317,18 @@
 
                         <h2 class="h2 section-title">Proximamenteeeee....</h2>
 
-                        <ul class="movies-list">
+                        <ul id="movie_upcoming" class="movies-list">
 
 
 
-                            <li>
-                                <div class="movie-card">
 
-                                    <a href="">
-                                        <figure class="card-banner">
-                                            <img src="./assets/images/PELICULA 5.jpg" alt="Moon Knight movie poster">
-                                        </figure>
-                                    </a>
-
-                                    <div class="title-wrapper">
-                                        <a href="./movie-details.html">
-                                            <h3 class="card-title">DEADPOOL 3 </h3>
-                                        </a>
-
-                                        <time datetime="2022">2024</time>
-                                    </div>
-
-                                    <div class="card-meta">
-                                        <div class=""></div>
-
-                                        <div class="duration">
-                                            <ion-icon name=""></ion-icon>
-
-                                            <time datetime="PT47M"></time>
-                                        </div>
-
-                                        <div class="rating">
-                                            <ion-icon name=""></ion-icon>
-
-                                            <data></data>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="movie-card">
-
-                                    <a href="">
-                                        <figure class="card-banner">
-                                            <img src="./assets/images/PELICULA 5.jpg" alt="Moon Knight movie poster">
-                                        </figure>
-                                    </a>
-
-                                    <div class="title-wrapper">
-                                        <a href="./movie-details.html">
-                                            <h3 class="card-title">DEADPOOL 3 </h3>
-                                        </a>
-
-                                        <time datetime="2022">2024</time>
-                                    </div>
-
-                                    <div class="card-meta">
-                                        <div class=""></div>
-
-                                        <div class="duration">
-                                            <ion-icon name=""></ion-icon>
-
-                                            <time datetime="PT47M"></time>
-                                        </div>
-
-                                        <div class="rating">
-                                            <ion-icon name=""></ion-icon>
-
-                                            <data></data>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </li>
                         </ul>
 
                     </div>
                 </section>
                 <!--
-              - #CTA
-            -->
+                  - #CTA
+                -->
             </article>
         </main>
 
@@ -475,8 +337,8 @@
 
 
         <!--
-          - #FOOTER
-        -->
+              - #FOOTER
+            -->
 
         <footer class="footer">
 
@@ -592,8 +454,8 @@
 
 
         <!--
-          - #GO TO TOP
-        -->
+              - #GO TO TOP
+            -->
 
         <a href="#top" class="go-top" data-go-top>
             <ion-icon name="chevron-up"></ion-icon>
@@ -610,13 +472,16 @@
 
 @section('js')
     <!--
-          - custom js link
-        -->
+              - custom js link
+            -->
+    <script src="{{ asset('assets/js/best_rated.js') }}"></script>
+    <script src="{{ asset('assets/js/top_100.js') }}"></script>
+    <script src="{{ asset('assets/js/proximamente.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
     <!--
-          - ionicon link
-        -->
+              - ionicon link
+            -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 @endsection

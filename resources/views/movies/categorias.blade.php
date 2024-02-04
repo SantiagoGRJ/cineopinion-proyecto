@@ -130,7 +130,7 @@
 
 
 
- 
+
 
 
 
@@ -164,42 +164,9 @@
 
 
 
-            <ul class="movies-list">
-              <li>
-                <div class="movie-card">
+            <ul id="movie_action" class="movies-list">
 
-                  <a href="./movie-details.html">
-                    <figure class="card-banner">
-                      <img src="./assets/images/PELICULA1.jpg" alt="">
-                    </figure>
-                  </a>
 
-                  <div class="title-wrapper">
-                    <a href="./movie-details.html">
-                      <h3 class="card-title">resident evil the final chapter</h3>
-                    </a>
-
-                    <time datetime="2022">2017</time>
-                  </div>
-
-                  <div class="card-meta">
-                    <div class="badge badge-outline">2K</div>
-
-                    <div class="duration">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="PT122M">106 min</time>
-                    </div>
-
-                    <div class="rating">
-                      <ion-icon name="star"></ion-icon>
-
-                      <data>7.8</data>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
             </ul>
 
 
@@ -218,42 +185,8 @@
 
 
 
-            <ul class="movies-list">
-              <li>
-                <div class="movie-card">
+            <ul id="movie_terror" class="movies-list">
 
-                  <a href="./movie-details.html">
-                    <figure class="card-banner">
-                      <img src="./assets/images/PELICULA1.jpg" alt="">
-                    </figure>
-                  </a>
-
-                  <div class="title-wrapper">
-                    <a href="./movie-details.html">
-                      <h3 class="card-title">resident evil the final chapter</h3>
-                    </a>
-
-                    <time datetime="2022">2017</time>
-                  </div>
-
-                  <div class="card-meta">
-                    <div class="badge badge-outline">2K</div>
-
-                    <div class="duration">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="PT122M">106 min</time>
-                    </div>
-
-                    <div class="rating">
-                      <ion-icon name="star"></ion-icon>
-
-                      <data>7.8</data>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
 
             </ul>
 
@@ -269,42 +202,8 @@
 
 
 
-            <ul class="movies-list">
-              <li>
-                <div class="movie-card">
+            <ul id="movie_comedia" class="movies-list">
 
-                  <a href="./movie-details.html">
-                    <figure class="card-banner">
-                      <img src="./assets/images/PELICULA1.jpg" alt="">
-                    </figure>
-                  </a>
-
-                  <div class="title-wrapper">
-                    <a href="./movie-details.html">
-                      <h3 class="card-title">resident evil the final chapter</h3>
-                    </a>
-
-                    <time datetime="2022">2017</time>
-                  </div>
-
-                  <div class="card-meta">
-                    <div class="badge badge-outline">2K</div>
-
-                    <div class="duration">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="PT122M">106 min</time>
-                    </div>
-
-                    <div class="rating">
-                      <ion-icon name="star"></ion-icon>
-
-                      <data>7.8</data>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
 
             </ul>
 
@@ -319,42 +218,9 @@
 
 
 
-            <ul class="movies-list">
-              <li>
-                <div class="movie-card">
+            <ul id="movie_romance" class="movies-list">
 
-                  <a href="./movie-details.html">
-                    <figure class="card-banner">
-                      <img src="./assets/images/PELICULA1.jpg" alt="">
-                    </figure>
-                  </a>
 
-                  <div class="title-wrapper">
-                    <a href="./movie-details.html">
-                      <h3 class="card-title">resident evil the final chapter</h3>
-                    </a>
-
-                    <time datetime="2022">2017</time>
-                  </div>
-
-                  <div class="card-meta">
-                    <div class="badge badge-outline">2K</div>
-
-                    <div class="duration">
-                      <ion-icon name="time-outline"></ion-icon>
-
-                      <time datetime="PT122M">106 min</time>
-                    </div>
-
-                    <div class="rating">
-                      <ion-icon name="star"></ion-icon>
-
-                      <data>7.8</data>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
 
             </ul>
 
@@ -371,46 +237,9 @@
 
             <h2 class="h2 section-title">Proximamenteeeee....</h2>
 
-            <ul class="movies-list">
-
-              <li>
-                <div class="movie-card">
-
-                  <a href="">
-                    <figure class="card-banner">
-                      <img src="./assets/images/PELICULA 5.jpg" alt="Moon Knight movie poster">
-                    </figure>
-                  </a>
-
-                  <div class="title-wrapper">
-                    <a href="./movie-details.html">
-                      <h3 class="card-title">DEADPOOL 3 </h3>
-                    </a>
-
-                    <time datetime="2022">2024</time>
-                  </div>
-
-                  <div class="card-meta">
-                    <div class=""></div>
-
-                    <div class="duration">
-                      <ion-icon name=""></ion-icon>
-
-                      <time datetime="PT47M"></time>
-                    </div>
-
-                    <div class="rating">
-                      <ion-icon name=""></ion-icon>
-
-                      <data></data>
-                    </div>
-                  </div>
-
-                </div>
-              </li>
+            <ul id="movie_upcoming" class="movies-list">
 
 
-              </li>
 
             </ul>
 
@@ -574,6 +403,12 @@
 @endsection
 
 @section('js')
+
+<script src="{{asset('assets/js/accion.js')}}"></script>
+<script src="{{asset('assets/js/terror.js')}}"></script>
+<script src="{{asset('assets/js/comedia.js')}}"></script>
+<script src="{{asset('assets/js/romance.js')}}"></script>
+<script src="{{asset('assets/js/proximamente.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
 
     <!--
