@@ -16,18 +16,18 @@ fetch(url, options)
     let htmlContent = "";
 
     json.results.forEach((movie) => {
-      // 
+      //
       htmlContent += `<li>
       <div class="movie-card">
 
-        <a href="">
+        <a href='cineopinion/${movie.id}'>
           <figure class="card-banner">
             <img src='https://image.tmdb.org/t/p/w500${movie.poster_path}' alt="${movie.title}">
           </figure>
         </a>
 
         <div class="title-wrapper">
-          <a href="./movie-details.html">
+          <a href='cineopinion/${movie.id}'>
             <h3 class="card-title">${movie.title} </h3>
           </a>
 
@@ -54,7 +54,7 @@ fetch(url, options)
     </li>`;
     });
 
-    
+
     movieListElement.innerHTML = htmlContent;
   })
   .catch((err) => console.error("error:" + err));

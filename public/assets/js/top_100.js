@@ -18,14 +18,14 @@ fetch(url_top, options_top)
       htmlContent+=`  <li>
       <div class="movie-card">
 
-          <a href="peli1.html">
+          <a href='cineopinion/${movie.id}'>
               <figure class="card-banner">
                   <img src='https://image.tmdb.org/t/p/w500${movie.poster_path}' alt="${movie.title}">
               </figure>
           </a>
 
           <div class="title-wrapper">
-              <a href="peli1.html">
+              <a href='cineopinion/${movie.id}'>
                   <h3 class="card-title">${movie.title}</h3>
               </a>
 
@@ -50,10 +50,10 @@ fetch(url_top, options_top)
 
       </div>
   </li>`;
-      
+
     });
 
-    
+
     movieListElement.innerHTML = htmlContent;
   })
   .catch((err) => console.error("error:" + err));

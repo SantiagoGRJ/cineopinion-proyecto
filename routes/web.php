@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('cineopinion/{id}',function ($id) {
+    $pelicula=$id;
+    return view('movies.pelicula',compact('pelicula'));
+});
 
 
 Route::get('/dashboard', function () {

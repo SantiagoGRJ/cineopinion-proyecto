@@ -32,7 +32,7 @@
 
         <div class="overlay" data-overlay></div>
 
-        <a href="./index.html" class="logo">
+        <a href="{{ route('cineopinion.index') }}" class="logo">
           <img src="./assets/images/logo.jpg" width="70" alt="">
         </a>
 
@@ -53,8 +53,8 @@
 
           <div class="navbar-top">
 
-            <a href="./index.html" class="logo">
-              <img src="./assets/images/logo.svg" alt="Filmlane logo">
+            <a href="{{ route('cineopinion.index') }}" class="logo">
+              <img src="./assets/images/logo.jpg" width="70" alt="Filmlane logo">
             </a>
 
             <button class="menu-close-btn" data-menu-close-btn>
@@ -363,13 +363,13 @@
       </div>
 
       <div class="footer-bottom">
-        <div class="container">
+        <div class="container" style="display: flex; justify-content: center;">
 
           <p class="copyright">
-            &copy; 2023 <a href="#">equipo4</a>. Todos los derechos reservados
+            &copy; 2023 <a href="#">Equipo 4</a>. Todos los derechos reservados
           </p>
 
-          <img src="./assets/images/footer-bottom-img.png" alt="Online banking companies logo" class="footer-bottom-img">
+
 
         </div>
       </div>

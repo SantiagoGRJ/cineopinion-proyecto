@@ -14,26 +14,26 @@ fetch(url_accion, options_accion)
   .then((json) => {
     const movieListElement = document.getElementById("movie_action");
     let htmlContent = "";
-    
+
     function formatReleaseDate(dateString) {
         const options = { year: 'numeric' };
         return new Date(dateString).toLocaleDateString('es-ES', options);
       }
 
     json.results.forEach((movie) => {
-      // 
+      //
       htmlContent += `
       <li>
               <div class="movie-card">
 
-                <a href="./movie-details.html">
+                <a href='cineopinion/${movie.id}'>
                   <figure class="card-banner">
                     <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.poster_path}">
                   </figure>
                 </a>
 
                 <div class="title-wrapper">
-                  <a href="./movie-details.html">
+                  <a href='cineopinion/${movie.id}'>
                     <h3 class="card-title">${movie.title}</h3>
                   </a>
 
@@ -41,10 +41,10 @@ fetch(url_accion, options_accion)
                 </div>
 
                 <div class="card-meta">
-                  
+
 
                   <div class="duration">
-                    
+
                   </div>
 
                   <div class="rating">
@@ -59,7 +59,7 @@ fetch(url_accion, options_accion)
 `;
     });
 
-    
+
     movieListElement.innerHTML = htmlContent;
   })
   .catch((err) => console.error("error:" + err));

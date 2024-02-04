@@ -14,26 +14,26 @@ fetch(url_upcomming, options_upcomming)
   .then((json) => {
     const movieListElement = document.getElementById("movie_upcoming");
     let htmlContent = "";
-    
+
     function formatReleaseDate(dateString) {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         return new Date(dateString).toLocaleDateString('es-ES', options);
       }
 
     json.results.forEach((movie) => {
-      // 
+      //
       htmlContent += `
       <li>
         <div class="movie-card">
 
-          <a href="">
+          <a href='cineopinion/${movie.id}'>
             <figure class="card-banner">
               <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.poster_path}">
             </figure>
           </a>
 
           <div class="title-wrapper">
-            <a href="./movie-details.html">
+            <a href='cineopinion/${movie.id}'>
               <h3 class="card-title">${movie.title} </h3>
             </a>
 
@@ -61,9 +61,9 @@ fetch(url_upcomming, options_upcomming)
 `;
     });
 
-    
+
     movieListElement.innerHTML = htmlContent;
   })
   .catch((err) => console.error("error:" + err));
 
-  
+
