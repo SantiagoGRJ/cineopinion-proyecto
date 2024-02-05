@@ -70,7 +70,7 @@
             </li>
 
             <li>
-              <a href="#" class="navbar-link">Peliculas</a>
+              <a href="{{route('category.index')}}" class="navbar-link">Peliculas</a>
             </li>
 
             <li>
