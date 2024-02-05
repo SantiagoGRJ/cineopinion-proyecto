@@ -319,7 +319,7 @@
               - custom js link
             -->
     <script src="{{ asset('assets/js/indivual.js') }}"></script>
-    <script src="{{ asset('assets/js/proximamente.js') }}"></script>
+    <script src="{{ asset('assets/js/proximamente_only.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
     <!--
