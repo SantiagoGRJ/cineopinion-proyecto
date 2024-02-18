@@ -2,18 +2,18 @@
 
 @section('css')
     <!--
-            - favicon
-          -->
+                    - favicon
+                  -->
     <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
     <!--
-            - custom css link
-          -->
+                    - custom css link
+                  -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 
     <!--
-          - google font link
-        -->
+                  - google font link
+                -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,8 +24,8 @@
     <body id="top">
 
         <!--
-              - #HEADER
-            -->
+                      - #HEADER
+                    -->
 
         <header class="header" data-header>
             <div class="container">
@@ -81,80 +81,107 @@
                             <a href="#" class="navbar-link">Contacto</a>
                         </li>
 
-                        <li>
-                            <div class="navbar-link">
-                                <div class="hidden sm:flex sm:items-center sm:ms-6">
-                                    <x-dropdown align="right" width="48">
-                                        <x-slot name="trigger">
-                                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                                                <div>{{ Auth::user()->name }}</div>
+                        <li class="navbar-link">
+                            <x-dropdown align="right" width="48">
+                                <x-slot name="trigger">
+                                    <button
+                                        class="  inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md  ease-in-out duration-150">
+                                        <div>
+                                            @if (Auth::user())
+                                                {{ Auth::user()->name }}
+                                        </div>
 
-                                                <div class="ms-1">
-                                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-                                                    </svg>
-                                                </div>
-                                            </button>
-                                        </x-slot>
+                                        <div class="ms-1">
+                                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd"
+                                                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                    clip-rule="evenodd" />
+                                            </svg>
+                                        </div>
+                                    @else
+                                        <a href="{{ route('login') }}" class="navbar-link ">Log in</a>
+            </div>
 
-                                        <x-slot name="content">
-                                            <x-dropdown-link :href="route('profile.edit')">
-                                                {{ __('Profile') }}
-                                            </x-dropdown-link>
+            <div class="ms-1">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            @endif
 
-                                            <!-- Authentication -->
-                                            <form method="POST" action="{{ route('logout') }}">
-                                                @csrf
+            </button>
+            </x-slot>
 
-                                                <x-dropdown-link :href="route('logout')"
-                                                        onclick="event.preventDefault();
-                                                                    this.closest('form').submit();">
-                                                    {{ __('Log Out') }}
-                                                </x-dropdown-link>
-                                            </form>
-                                        </x-slot>
-                                    </x-dropdown>
-                                </div>
-                            </div>
-                        </li>
+            @if (Auth::user())
+                <x-slot name="content">
+                    <x-dropdown-link :href="route('profile.edit')">
+                        {{ __('Profile') }}
+                    </x-dropdown-link>
 
-                    </ul>
+                    <!-- Authentication -->
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
 
-                    <ul class="navbar-social-list">
+                        <x-dropdown-link :href="route('logout')"
+                            onclick="event.preventDefault();
+                                                            this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-dropdown-link>
+                    </form>
+                </x-slot>
+            @else
+                <x-slot name="content">
+                    <x-dropdown-link :href="route('register')">
+                        @if (Route::has('register'))
+                        {{ __('Register') }}
+                        @endif
+                    </x-dropdown-link>
+                </x-slot>
+            @endif
 
-                        <li>
-                            <a href="#" class="navbar-social-link">
-                                <ion-icon name="logo-twitter"></ion-icon>
-                            </a>
-                        </li>
+            </x-dropdown>
+            </li>
 
-                        <li>
-                            <a href="#" class="navbar-social-link">
-                                <ion-icon name="logo-facebook"></ion-icon>
-                            </a>
-                        </li>
+            </ul>
 
-                        <li>
-                            <a href="#" class="navbar-social-link">
-                                <ion-icon name="logo-pinterest"></ion-icon>
-                            </a>
-                        </li>
+            <ul class="navbar-social-list">
 
-                        <li>
-                            <a href="#" class="navbar-social-link">
-                                <ion-icon name="logo-instagram"></ion-icon>
-                            </a>
-                        </li>
+                <li>
+                    <a href="#" class="navbar-social-link">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                </li>
 
-                        <li>
-                            <a href="#" class="navbar-social-link">
-                                <ion-icon name="logo-youtube"></ion-icon>
-                            </a>
-                        </li>
+                <li>
+                    <a href="#" class="navbar-social-link">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                </li>
 
-                    </ul>
+                <li>
+                    <a href="#" class="navbar-social-link">
+                        <ion-icon name="logo-pinterest"></ion-icon>
+                    </a>
+                </li>
 
-                </nav>
+                <li>
+                    <a href="#" class="navbar-social-link">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="navbar-social-link">
+                        <ion-icon name="logo-youtube"></ion-icon>
+                    </a>
+                </li>
+
+            </ul>
+
+            </nav>
 
             </div>
         </header>
@@ -167,8 +194,8 @@
             <article>
 
                 <!--
-                  - #HERO
-                -->
+                          - #HERO
+                        -->
 
                 <section class="hero">
                     <div class="container">
@@ -194,8 +221,8 @@
 
 
                 <!--
-                  - #UPCOMING
-                -->
+                          - #UPCOMING
+                        -->
 
                 <section class="upcoming">
                     <div class="container">
@@ -229,86 +256,86 @@
 
 
                 <!--
-                  - #SERVICE
-                -->
+                          - #SERVICE
+                        -->
 
                 <!-- <section class="service">
-                  <div class="container">
+                          <div class="container">
 
-                    <div class="service-banner">
-                      <figure>
-                        <img src="./assets/images/service-banner.jpg" alt="HD 4k resolution! only $3.99">
-                      </figure>
+                            <div class="service-banner">
+                              <figure>
+                                <img src="./assets/images/service-banner.jpg" alt="HD 4k resolution! only $3.99">
+                              </figure>
 
-                      <a href="./assets/images/service-banner.jpg" download class="service-btn">
-                        <span>Download</span>
+                              <a href="./assets/images/service-banner.jpg" download class="service-btn">
+                                <span>Download</span>
 
-                        <ion-icon name="download-outline"></ion-icon>
-                      </a>
-                    </div>
-
-                    <div class="service-content">
-
-                      <p class="service-subtitle">NUESTROS SERVICIOS</p>
-
-                      <h2 class="h2 service-title">VER RESEÑAS DE TUS PELICULAS FAVORITAS</h2>
-
-                      <p class="service-text">
-                        Aca podrás ver las reseñas de tus peliculas favoritas de igual forma podrar ver el trailer y donde puedes encontrar la pelicula en una calidad buena, de igual forma podrás descargar el poster de las peliculas en buena calidad.
-                      </p>
-
-                      <ul class="service-list">
-
-                        <li>
-                          <div class="service-card">
-
-                            <div class="card-icon">
-                              <ion-icon name="tv"></ion-icon>
+                                <ion-icon name="download-outline"></ion-icon>
+                              </a>
                             </div>
 
-                            <div class="card-content">
-                              <h3 class="h3 card-title">Disfrútalo en tu televisor.</h3>
+                            <div class="service-content">
 
-                              <p class="card-text">
+                              <p class="service-subtitle">NUESTROS SERVICIOS</p>
 
+                              <h2 class="h2 service-title">VER RESEÑAS DE TUS PELICULAS FAVORITAS</h2>
+
+                              <p class="service-text">
+                                Aca podrás ver las reseñas de tus peliculas favoritas de igual forma podrar ver el trailer y donde puedes encontrar la pelicula en una calidad buena, de igual forma podrás descargar el poster de las peliculas en buena calidad.
                               </p>
+
+                              <ul class="service-list">
+
+                                <li>
+                                  <div class="service-card">
+
+                                    <div class="card-icon">
+                                      <ion-icon name="tv"></ion-icon>
+                                    </div>
+
+                                    <div class="card-content">
+                                      <h3 class="h3 card-title">Disfrútalo en tu televisor.</h3>
+
+                                      <p class="card-text">
+
+                                      </p>
+                                    </div>
+
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div class="service-card">
+
+                                    <div class="card-icon">
+                                      <ion-icon name="videocam"></ion-icon>
+                                    </div>
+
+                                    <div class="card-content">
+                                      <h3 class="h3 card-title">Míralo en todas partes.</h3>
+
+                                      <p class="card-text">
+
+                                      </p>
+                                    </div>
+
+                                  </div>
+                                </li>
+
+                              </ul>
+
                             </div>
 
                           </div>
-                        </li>
-
-                        <li>
-                          <div class="service-card">
-
-                            <div class="card-icon">
-                              <ion-icon name="videocam"></ion-icon>
-                            </div>
-
-                            <div class="card-content">
-                              <h3 class="h3 card-title">Míralo en todas partes.</h3>
-
-                              <p class="card-text">
-
-                              </p>
-                            </div>
-
-                          </div>
-                        </li>
-
-                      </ul>
-
-                    </div>
-
-                  </div>
-                </section> -->
+                        </section> -->
 
 
 
 
 
                 <!--
-                  - #TOP RATED
-                -->
+                          - #TOP RATED
+                        -->
 
                 <section class="top-rated">
                     <div class="container">
@@ -340,8 +367,8 @@
 
 
                 <!--
-                  - #TV SERIES
-                -->
+                          - #TV SERIES
+                        -->
 
                 <section class="tv-series">
                     <div class="container">
@@ -360,8 +387,8 @@
                     </div>
                 </section>
                 <!--
-                  - #CTA
-                -->
+                          - #CTA
+                        -->
             </article>
         </main>
 
@@ -370,8 +397,8 @@
 
 
         <!--
-              - #FOOTER
-            -->
+                      - #FOOTER
+                    -->
 
         <footer class="footer">
 
@@ -487,8 +514,8 @@
 
 
         <!--
-              - #GO TO TOP
-            -->
+                      - #GO TO TOP
+                    -->
 
         <a href="#top" class="go-top" data-go-top>
             <ion-icon name="chevron-up"></ion-icon>
@@ -505,16 +532,16 @@
 
 @section('js')
     <!--
-              - custom js link
-            -->
+                      - custom js link
+                    -->
     <script src="{{ asset('assets/js/best_rated.js') }}"></script>
     <script src="{{ asset('assets/js/top_100.js') }}"></script>
     <script src="{{ asset('assets/js/proximamente.js') }}"></script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
     <!--
-              - ionicon link
-            -->
+                      - ionicon link
+                    -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 @endsection
