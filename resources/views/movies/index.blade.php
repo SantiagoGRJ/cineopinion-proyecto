@@ -47,6 +47,7 @@
 
                             <p class="hero-subtitle">CINEOPINIÓN</p>
 
+
                             <h1 class="h1 hero-title">
                                 Películas <strong>Reseñas</strong> y más ilimitados..
                             </h1>
@@ -84,6 +85,7 @@
 
                         </div>
 
+
                         <ul id="top-cien" class="movies-list  has-scrollbar">
 
 
@@ -92,6 +94,7 @@
                         </ul>
 
                     </div>
+
                 </section>
 
 

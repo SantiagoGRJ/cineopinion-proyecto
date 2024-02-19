@@ -40,13 +40,13 @@
                     <a href="{{ route('category.index') }}" class="navbar-link">Peliculas</a>
                 </li>
 
-                <li>
+                {{-- <li>
                     <a href="#" class="navbar-link">Acerca de Nosotros</a>
                 </li>
 
                 <li>
                     <a href="#" class="navbar-link">Contacto</a>
-                </li>
+                </li> --}}
 
                 <li class="navbar-link">
                     <x-dropdown align="right" width="48">

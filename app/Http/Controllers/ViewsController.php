@@ -37,7 +37,9 @@ class ViewsController extends Controller
      */
     public function show(views $views)
     {
-        
+        $pelicula=$views;
+
+        return view('movies.pelicula',compact('pelicula'));
     }
 
     /**

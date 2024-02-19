@@ -30,8 +30,15 @@ Route::get('cineopinion/{id}',function ($id) {
     $pelicula=$id;
     return view('movies.pelicula',compact('pelicula'));
 });
-
 Route::get('cineopinion/cineopinion/{id}',function ($id) {
+    $pelicula=$id;
+    return view('movies.pelicula',compact('pelicula'));
+});
+Route::get('cineopinion/cineopinion/cineopinion/{id}',function ($id) {
+    $pelicula=$id;
+    return view('movies.pelicula',compact('pelicula'));
+});
+Route::get('cineopinion/cineopinion/cineopinion/cineopinion/{id}',function ($id) {
     $pelicula=$id;
     return view('movies.pelicula',compact('pelicula'));
 });
