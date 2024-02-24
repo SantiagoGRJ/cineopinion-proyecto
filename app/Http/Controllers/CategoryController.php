@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\category;
+use App\Models\generos;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -45,7 +46,7 @@ class CategoryController extends Controller
      */
     public function edit(category $category)
     {
-        //
+       
     }
 
     /**

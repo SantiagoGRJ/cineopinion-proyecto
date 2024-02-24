@@ -1,8 +1,12 @@
 <?php
 
+use App\Http\Controllers\AccionController;
 use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ComediaController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RomanceController;
+use App\Http\Controllers\TerrorController;
 use App\Http\Controllers\ViewsController;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
@@ -34,14 +38,8 @@ Route::get('cineopinion/cineopinion/{id}',function ($id) {
     $pelicula=$id;
     return view('movies.pelicula',compact('pelicula'));
 });
-Route::get('cineopinion/cineopinion/cineopinion/{id}',function ($id) {
-    $pelicula=$id;
-    return view('movies.pelicula',compact('pelicula'));
-});
-Route::get('cineopinion/cineopinion/cineopinion/cineopinion/{id}',function ($id) {
-    $pelicula=$id;
-    return view('movies.pelicula',compact('pelicula'));
-});
+
+
 
 
 Route::get('/dashboard', function () {
@@ -57,5 +55,16 @@ Route::middleware('auth')->group(function () {
 Route::resource('cineopinion', ViewsController::class);
 Route::resource('administrador',AdminsController::class);
 Route::resource('category', CategoryController::class);
+
+Route::resource('accion', AccionController::class);
+Route::resource('terror', TerrorController::class);
+Route::resource('comedia', ComediaController::class);
+Route::resource('romance',RomanceController::class);
+
+ /* Route::get('category/{id}', function($id){
+    $categoria=$id;
+    return view('movies.categorias',compact('categoria'));
+}); */
+
 
 require __DIR__.'/auth.php';

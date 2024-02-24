@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\generos;
-use App\Models\views;
+use App\Models\Terror;
 use Illuminate\Http\Request;
 
-class ViewsController extends Controller
+class TerrorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
-       return view('movies.index');
+        return view('categoria.terror');
     }
 
     /**
@@ -36,25 +34,23 @@ class ViewsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(views $views)
+    public function show(Terror $terror)
     {
-        $pelicula=$views;
-
-        return view('movies.pelicula',compact('pelicula'));
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(views $views)
+    public function edit(Terror $terror)
     {
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, views $views)
+    public function update(Request $request, Terror $terror)
     {
         //
     }
@@ -62,7 +58,7 @@ class ViewsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(views $views)
+    public function destroy(Terror $terror)
     {
         //
     }
