@@ -64,6 +64,7 @@
                                <a href="{{route('romance.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out"
                                >
                                 Romance</a>
+
                                 <!-- Authentication -->
 
                             </x-slot>
@@ -188,6 +189,29 @@
               </x-dropdown>
 --}}
     </li>
+
+    <li>
+        
+          @if (config('locale.status') && count(config('locale.languages')) > 1)
+          <div class="lang-wrapper">
+            <label for="language">
+              <ion-icon name="globe-outline"></ion-icon>
+            </label>
+                    @foreach (array_keys(config('locale.languages')) as $lang)
+                        @if ($lang != App::getLocale())
+                            <a href="{!! route('lang.swap', $lang) !!}"class="navbar-link">
+                                    {!! $lang !!} <small>{!! $lang !!}</small>
+
+                            </a>
+                        @endif
+                    @endforeach
+                </div>
+            @endif
+    </li>
+
+
+
+
 
     </ul>
 

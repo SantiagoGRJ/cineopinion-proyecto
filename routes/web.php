@@ -4,12 +4,15 @@ use App\Http\Controllers\AccionController;
 use App\Http\Controllers\AdminsController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ComediaController;
+
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RomanceController;
 use App\Http\Controllers\TerrorController;
 use App\Http\Controllers\ViewsController;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers\LanguageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +28,8 @@ use Illuminate\Support\Facades\Route;
 /* Route::get('/', function () {
     return view('welcome');
 }); */
+
+Route::get('/user/{id}', [LanguageController::class, 'swap'])->name('lang.swap');
 
 Route::get('/', function () {
     return view('movies.index');
