@@ -68,7 +68,7 @@
             </div>
             <!-- Modal body -->
             <div class="p-4 md:p-5 space-y-4">
-               
+
             </div>
             <!-- Modal footer -->
             <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
@@ -92,9 +92,9 @@
         <section class="tv-series">
             <div class="container">
 
-                <p class="section-subtitle">Peliculas</p>
+                <p class="section-subtitle">{{__('FILMS')}}</p>
 
-                <h2 class="h2 section-title">Proximamenteeeee....</h2>
+                <h2 class="h2 section-title">{{__('Upcoming')}}...</h2>
 
                 <ul id="movie_upcoming" class="movies-list">
 

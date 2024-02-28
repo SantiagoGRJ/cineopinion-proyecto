@@ -33,7 +33,7 @@
             <ul class="navbar-list">
 
                 <li>
-                    <a href="{{ route('cineopinion.index') }}" class="navbar-link">Inicio</a>
+                    <a href="{{ route('cineopinion.index') }}" class="navbar-link">{{__('Index')}}</a>
                 </li>
 
                 <li>
@@ -43,7 +43,7 @@
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
                                 <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
-                                    <div>Categorias</div>
+                                    <div>{{ __('Categories') }}</div>
 
                                     <div class="ms-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -55,15 +55,15 @@
 
                             <x-slot name="content">
                                 <a href="{{route('accion.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out">
-                                    Accion
+                                    {{__('Action')}}
                                 </a>
                                <a href="{{route('terror.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out">
                                 Terror</a>
                                <a href="{{route('comedia.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out" >
-                                Comedia</a>
+                                {{__('Comedy')}}</a>
                                <a href="{{route('romance.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out"
                                >
-                                Romance</a>
+                                {{__('Romance')}}</a>
 
                                 <!-- Authentication -->
 
@@ -91,7 +91,7 @@
                         @if (Auth::user())
                         {{ Auth::user()->name }}
                         @else
-                        <a href="{{ route('login') }}" class="">Log in</a>
+                        <a href="{{ route('login') }}" class="">{{__('Log in')}}</a>
                         @endif
                         <div class="ms-1">
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -191,7 +191,7 @@
     </li>
 
     <li>
-        
+
           @if (config('locale.status') && count(config('locale.languages')) > 1)
           <div class="lang-wrapper">
             <label for="language">

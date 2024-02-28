@@ -49,7 +49,7 @@
 
 
                             <h1 class="h1 hero-title">
-                                Películas <strong>Reseñas</strong> y más ilimitados..
+                                {{__('Movies')}} <strong>{{__('Reviews')}}</strong> {{__('And more unlimited')}}...
                             </h1>
 
 
@@ -76,7 +76,7 @@
                             <div class="title-wrapper">
                                 <p class="section-subtitle"></p>
 
-                                <h2 class="h2 section-title hero-title">Mejores <strong> 100 Películas </strong> del Momento
+                                <h2 class="h2 section-title hero-title"> {{__('The')}} <strong> {{__('100 best movies')}} </strong> {{__('of the moment')}}
                                 </h2>
                             </div>
 
@@ -186,9 +186,9 @@
                 <section class="top-rated">
                     <div class="container">
 
-                        <p class="section-subtitle">TRANSMISIÓN EN LÍNEA</p>
+                        <p class="section-subtitle">{{__('ONLINE STREAMING')}}</p>
 
-                        <h2 class="h2 section-title">Películas mejor valoradas</h2>
+                        <h2 class="h2 section-title">{{__('Top rated movies')}}</h2>
 
                         <ul class="filter-list">
 
@@ -219,9 +219,9 @@
                 <section class="tv-series">
                     <div class="container">
 
-                        <p class="section-subtitle">Peliculas</p>
+                        <p class="section-subtitle">{{__('FILMS')}}</p>
 
-                        <h2 class="h2 section-title">Proximamenteeeee....</h2>
+                        <h2 class="h2 section-title">{{__('Upcoming')}}....</h2>
 
                         <ul id="movie_upcoming" class="movies-list">
 

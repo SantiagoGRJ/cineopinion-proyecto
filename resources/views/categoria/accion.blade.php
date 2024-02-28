@@ -78,27 +78,13 @@
 
 
 
-        
+
 
         <!--
           - #TV SERIES
         -->
 
-        <section class="tv-series">
-          <div class="container">
-
-            <p class="section-subtitle">Peliculas</p>
-
-            <h2 class="h2 section-title">Proximamenteeeee....</h2>
-
-            <ul id="movie_upcoming" class="movies-list">
-
-
-
-            </ul>
-
-          </div>
-        </section>
+        <x-upcoming></x-upcoming>
 
 
 

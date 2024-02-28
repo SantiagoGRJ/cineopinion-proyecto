@@ -105,4 +105,5 @@ return [
     'user'            => 'No encontramos ningún usuario con ese correo electrónico.',
     'view'            => 'Ver',
     'yes'             => 'Sí',
+    
 ];

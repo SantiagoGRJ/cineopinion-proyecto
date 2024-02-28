@@ -12,14 +12,14 @@
                 <ul class="footer-list">
 
                     <li>
-                        <a href="{{ route('cineopinion.index') }}" class="footer-link">Inicio</a>
+                        <a href="{{ route('cineopinion.index') }}" class="footer-link">{{__('Index')}}</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Peliculas</a>
+                        <a href="#" class="footer-link">{{__('FILMS')}}</a>
                     </li>
 
-                    <li>
+                    {{-- <li>
                         <a href="#" class="footer-link">Acerca de Nosotros</a>
                     </li>
 
@@ -29,7 +29,7 @@
 
                     <li>
                         <a href="#" class="footer-link">Reseñas</a>
-                    </li>
+                    </li> --}}
 
                 </ul>
 
@@ -39,7 +39,7 @@
 
             <div class="quicklink-wrapper">
 
-                <ul class="quicklink-list">
+                {{-- <ul class="quicklink-list">
 
                     <li>
                         <a href="#" class="quicklink-link">PREGUNTAS MÁS FRECUENTES</a>
@@ -58,9 +58,9 @@
                         <a href="#" class="quicklink-link">PRIVACIDAD</a>
                     </li>
 
-                </ul>
+                </ul> --}}
 
-                <ul class="social-list">
+                {{-- <ul class="social-list">
 
                     <li>
                         <a href="#" class="social-link">
@@ -86,7 +86,7 @@
                         </a>
                     </li>
 
-                </ul>
+                </ul> --}}
 
             </div>
 
@@ -97,7 +97,7 @@
         <div class="container" style="display: flex; justify-content: center;">
 
             <p class="copyright">
-                &copy; 2023 <a href="#">Equipo 4</a>. Todos los derechos reservados
+                &copy; 2023 <a href="#">Equipo 4</a>. {{__('All rights reserved')}}
             </p>
 
 
