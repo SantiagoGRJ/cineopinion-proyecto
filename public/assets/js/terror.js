@@ -1,5 +1,8 @@
+var lang = document.getElementById('lang').value;
+console.log(lang)
+
 const url_terror =
-  "https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=es-MX&page=1&sort_by=popularity.desc&with_genres=27";
+  `https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=${lang}-MX&page=1&sort_by=popularity.desc&with_genres=27`;
 const options_terror = {
   method: "GET",
   headers: {

@@ -1,3 +1,6 @@
+var lang = document.getElementById('lang').value;
+console.log(lang)
+
 // Verificar si el elemento de la lista de películas está presente en la página
 const movieListElement = document.getElementById("movie_action");
 
@@ -16,7 +19,7 @@ if (movieListElement) {
     // Retraso de 2 segundos (2000 milisegundos)
     setTimeout(() => {
         // Realizar la solicitud a la API
-        const url_accion = "https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=es-MX&page=1&sort_by=popularity.desc&with_genres=28";
+        const url_accion = `https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=${lang}-MX&page=1&sort_by=popularity.desc&with_genres=28`;
         const options_accion = {
             method: "GET",
             headers: {
@@ -63,11 +66,11 @@ if (movieListElement) {
                 movieListElement.innerHTML = htmlContent;
             })
             .catch((err) => console.error("error:" + err));
-    }, 2000); // Retraso de 2 segundos (2000 milisegundos)
+    }, 500); // Retraso de 2 segundos (2000 milisegundos)
 }
 
 function formatReleaseDate(dateString) {
     const options = { year: 'numeric' };
-    return new Date(dateString).toLocaleDateString('es-ES', options);
+    return new Date(dateString).toLocaleDateString(`${lang}-ES`, options);
 }
 

@@ -1,5 +1,8 @@
+var lang = document.getElementById('lang').value;
+console.log(lang)
+
 const url_comedia =
-  "https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=es-MX&page=1&sort_by=popularity.desc&with_genres=35";
+  `https://api.themoviedb.org/3/discover/movie?include_adult=true&include_video=true&language=${lang}-EN&page=1&sort_by=popularity.desc&with_genres=35`;
 const options_comedia = {
   method: "GET",
   headers: {
@@ -17,7 +20,7 @@ fetch(url_comedia, options_comedia)
 
     function formatReleaseDate(dateString) {
         const options = { year: 'numeric' };
-        return new Date(dateString).toLocaleDateString('es-ES', options);
+        return new Date(dateString).toLocaleDateString(`${lang}-ES`, options);
       }
 
     json.results.forEach((movie) => {

@@ -1,44 +1,94 @@
 const id = document.getElementById('id').value;
+console.log(id)
+const lang = document.getElementById('lang').value;
+
+
+
+
+
+
 
 const url_individual =
-  ` https://api.themoviedb.org/3/movie/${id}?language=es-US`;
+    ` https://api.themoviedb.org/3/movie/${id}?language=${lang}-US`;
 const options_individual = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMGYzMDcwZmU3NGIzNWRkY2JjMTgwZWZmMTRmZTg0MyIsInN1YiI6IjYzNzViMDYxZmFiM2ZhMDBiNGNmZjNmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xi-0Zhg8ZITEz84prkLphBBWZOr8YRrzMgy_I9V30e8",
-  },
+    method: "GET",
+    headers: {
+        accept: "application/json",
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMGYzMDcwZmU3NGIzNWRkY2JjMTgwZWZmMTRmZTg0MyIsInN1YiI6IjYzNzViMDYxZmFiM2ZhMDBiNGNmZjNmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xi-0Zhg8ZITEz84prkLphBBWZOr8YRrzMgy_I9V30e8",
+    },
 };
 
 fetch(url_individual, options_individual)
-  .then((res) => res.json())
-  .then((json) => {
-    const movieListElement = document.getElementById("individual");
-    let htmlContent = "";
-    let htm="";
+    .then((res) => res.json())
+    .then((json) => {
+        const movieListElement = document.getElementById("individual");
+        let htmlContent = "";
+        let htm = "";
+
+        const provider_url = `https://api.themoviedb.org/3/movie/${id}/watch/providers`;
+
+        const options_provider = {
+            method: "GET",
+            headers: {
+                accept: "application/json",
+                Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMGYzMDcwZmU3NGIzNWRkY2JjMTgwZWZmMTRmZTg0MyIsInN1YiI6IjYzNzViMDYxZmFiM2ZhMDBiNGNmZjNmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xi-0Zhg8ZITEz84prkLphBBWZOr8YRrzMgy_I9V30e8",
+            },
+        };
 
 
-    if (json.genres && json.genres.length > 0) {
-        htm += '<div class="ganre-wrapper">';
+        fetch(provider_url, options_provider)
+            .then((res) => res.json())
+            .then((provider) => {
+                var pro = ""
 
 
-        for (let i = 0; i < Math.min(6, json.genres.length); i++) {
-          htm += `<a href="#">${json.genres[i].name}</a>`;
-        }
 
-        htm += '</div>';
-      }
 
-    function formatReleaseDate(dateString) {
-        const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(dateString).toLocaleDateString('es-ES', options);
-      }
-       //const mitad1 = json.title.slice(0, Math.ceil(json.title.length / 2));
-      //const mitad2 = json.title.slice(Math.ceil(json.title.length / 2));
+                if ((provider.results["MX"] == undefined) || (provider.results["MX"]['rent'] == undefined)) {
+                    pro += '<p class="text" style="font-size: 16px; color: #fa6705; font-weight: bold;">No hay información .</p>'
+                } else if (provider.results["MX"] == 0) {
+                    pro += `<div style=" padding: 10px;" class="title-wrapper">
+                <img width="50px" src="https://image.tmdb.org/t/p/w500${provider.results["MX"]["flatrate"][0].logo_path}" alt="${provider.results["MX"]["flatrate"][0].provider_name}" style="margin-right: 10px; ">
+                <p class="text" style="font-size: 16px; color: #fa6705; font-weight: bold;">${provider.results["MX"]["flatrate"][0].provider_name}</p>
+            </div>
+            `;
+                } else {
+                    provider.results["MX"]['rent'].forEach(element => {
+                        console.log(element.logo_path + '-' + element.provider_name);
+                        pro += `<div style=" padding: 10px;" class="title-wrapper">
+                <img width="50px" src="https://image.tmdb.org/t/p/w500${element.logo_path}" alt="${element.provider_name}" style="margin-right: 10px; ">
+                <p class="text" style="font-size: 16px; color: #fa6705; font-weight: bold;">${element.provider_name}</p>
+            </div>
+            `;
+                    });
+                }
 
-      console.log(json.title);
-      htmlContent +=` <div class="container">
+
+
+                if (json.genres && json.genres.length > 0) {
+                    htm += '<div class="ganre-wrapper">';
+
+
+                    for (let i = 0; i < Math.min(6, json.genres.length); i++) {
+                        htm += `<a href="#">${json.genres[i].name}</a>`;
+                    }
+
+                    htm += '</div>';
+                }
+
+                function formatReleaseDate(dateString) {
+                    const options = {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    };
+                    return new Date(dateString).toLocaleDateString(`${lang}-ES`, options);
+                }
+                //const mitad1 = json.title.slice(0, Math.ceil(json.title.length / 2));
+                //const mitad2 = json.title.slice(Math.ceil(json.title.length / 2));
+
+                console.log(json.title);
+                htmlContent += ` <div class="container">
 
       <figure class="movie-detail-banner">
 
@@ -100,23 +150,7 @@ fetch(url_individual, options_individual)
 
           <div class="details-actions">
 
-              <button class="share">
-                  <ion-icon name="share-social"></ion-icon>
-
-                  <span>Share</span>
-              </button>
-
-              <div class="title-wrapper">
-                  <p class="title">Prime Video</p>
-
-                  <p class="text">Streaming Channels</p>
-              </div>
-
-              <button class="btn btn-primary">
-                  <ion-icon name="play"></ion-icon>
-
-                  <span>Watch Now</span>
-              </button>
+             ${pro}
 
           </div>
 
@@ -131,38 +165,49 @@ fetch(url_individual, options_individual)
   </div>`
 
 
-    movieListElement.innerHTML = htmlContent;
-  })
-  .catch((err) => console.error("error:" + err));
+                movieListElement.innerHTML = htmlContent;
 
 
 
-const video_only =
-`https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`;
+
+
+
+                // https://image.tmdb.org/t/p/w500
+            })
+            .catch((error) => console.log("Error: provider " + error));
+
+
+
+    })
+    .catch((err) => console.error("error:" + err));
+
+
+
+
+
+const video_only = `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`;
 
 const options_only = {
     method: "GET",
     headers: {
-      accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMGYzMDcwZmU3NGIzNWRkY2JjMTgwZWZmMTRmZTg0MyIsInN1YiI6IjYzNzViMDYxZmFiM2ZhMDBiNGNmZjNmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xi-0Zhg8ZITEz84prkLphBBWZOr8YRrzMgy_I9V30e8",
+        accept: "application/json",
+        Authorization: "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMGYzMDcwZmU3NGIzNWRkY2JjMTgwZWZmMTRmZTg0MyIsInN1YiI6IjYzNzViMDYxZmFiM2ZhMDBiNGNmZjNmZSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Xi-0Zhg8ZITEz84prkLphBBWZOr8YRrzMgy_I9V30e8",
     },
-  };
+};
 
-  fetch(video_only,options_only)
-  .then((resp)=>resp.json())
-  .then((video)=>{
-    const showvideo = document.getElementById("video");
-    let videohtml ="";
-    console.log(video.results[0].key)
-    videohtml+=`<iframe width="560" height="315"
+fetch(video_only, options_only)
+    .then((resp) => resp.json())
+    .then((video) => {
+        const showvideo = document.getElementById("video");
+        let videohtml = "";
+        console.log(video.results[0].key)
+        videohtml += `<iframe width="560" height="315"
     src="https://www.youtube.com/embed/${video.results[0].key}?autoplay=0"
     title="YouTube video player" frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
     allowfullscreen></iframe>`
 
-    showvideo.innerHTML=videohtml;
+        showvideo.innerHTML = videohtml;
 
-  })
-  .catch((error) => console.error("Error: " + error));
-
+    })
+    .catch((error) => console.error("Error: " + error));

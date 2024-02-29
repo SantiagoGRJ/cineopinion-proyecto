@@ -1,5 +1,8 @@
+var lang = document.getElementById('lang').value;
+console.log(lang)
+
 const url =
-  "https://api.themoviedb.org/3/movie/top_rated?language=es-MX&page=1";
+  `https://api.themoviedb.org/3/movie/top_rated?language=${lang}-MX&page=1`;
 const options = {
   method: "GET",
   headers: {
@@ -61,5 +64,5 @@ fetch(url, options)
 
   function formatReleaseDate(dateString) {
     const options = { year: 'numeric' };
-    return new Date(dateString).toLocaleDateString('es-ES', options);
+    return new Date(dateString).toLocaleDateString(`${lang}-ES`, options);
   }

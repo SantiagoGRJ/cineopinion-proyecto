@@ -1,5 +1,8 @@
+var lang = document.getElementById('lang').value;
+console.log(lang)
+
 const url_upcomming =
-  "https://api.themoviedb.org/3/movie/upcoming?language=es-MX&page=5";
+  `https://api.themoviedb.org/3/movie/upcoming?language=${lang}-MX&page=5`;
 const options_upcomming = {
   method: "GET",
   headers: {
@@ -17,7 +20,7 @@ fetch(url_upcomming, options_upcomming)
 
     function formatReleaseDate(dateString) {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(dateString).toLocaleDateString('es-ES', options);
+        return new Date(dateString).toLocaleDateString(`${lang}-ES`, options);
       }
 
     json.results.forEach((movie) => {
