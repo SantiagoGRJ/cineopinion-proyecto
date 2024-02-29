@@ -198,19 +198,18 @@
               <ion-icon name="globe-outline"></ion-icon>
             </label>
                     @foreach (array_keys(config('locale.languages')) as $lang)
-                        @if ($lang !href="{!! route('lang.swap', $lang) !!}"class="navbar-link">
-                              = App::getLocale())
-                            <a       {!! $lang !!} <small  >{!! $lang !!}</small>
+                        
 
-                                @if ($lang == 'es')
+                        @if ($lang != App::getLocale())
+                            <a href="{!! route('lang.swap', $lang) !!}" class="navbar-link" >
+                                    {!! $lang !!} <small>{!! $lang !!}</small>
+                                    @if ($lang == 'es')
 
-                                         <input type="hidden" id="lang"  value="{{ $l = 'en'  }}">
-                                    @elseif ($lang == 'en')
+                                    <input type="hidden" id="lang"  value="{{ $l = 'en'  }}">
+                               @elseif ($lang == 'en')
 
-                                    <input type="hidden" id="lang"  value="{{ $l = 'es'  }}">
-                                    @endif
-
-
+                               <input type="hidden" id="lang"  value="{{ $l = 'es'  }}">
+                               @endif
                             </a>
                         @endif
                     @endforeach
