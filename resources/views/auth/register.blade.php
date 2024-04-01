@@ -1,5 +1,5 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" id="register-form"  action="{{ route('register') }}">
         @csrf
 
         <!-- Name -->
@@ -38,6 +38,11 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
+        <div>
+            <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+            <x-input-error :messages="$errors->get('g-recaptcha-response')" class="mt-2" />
+        </div>
+
         <!-- <div class="mt-4">
 
             <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selecciona
@@ -53,15 +58,43 @@
 
         </div> -->
 
+
+
         <div class="flex items-center justify-end mt-4">
             <a class="underline text-sm text-gray-600 dark:text-custom-orange hover:text-gray-900 dark:hover:text-orange-700 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                 href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
 
-            <x-primary-button class="ms-4">
+            <x-primary-button class=" ms-4" type="button" onclick="onClick(event)"
+
+            >
                 {{ __('Register') }}
             </x-primary-button>
         </div>
+
     </form>
+
+    @push('scripts')
+    {{-- <script>
+        function onSubmit(token) {
+          document.getElementById("register-form").submit();
+        }
+      </script> --}}
+
+      <script>
+        function onClick(e) {
+          e.preventDefault();
+          grecaptcha.ready(function() {
+            grecaptcha.execute('{{config('services.recaptcha.site_key')}}', {action: 'register'}).then(function(token) {
+                // Add your logic to submit to your backend server here.
+                document.getElementById("g-recaptcha-response").value = token
+                document.getElementById("register-form").submit();
+            });
+          });
+        }
+    </script>
+
+    @endpush
+
 </x-guest-layout>

@@ -42,26 +42,37 @@
                     <div class="navbar-link  sm:flex sm:items-center sm:ms-6">
                         <x-dropdown align="right" width="48">
                             <x-slot name="trigger">
-                                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                                <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md
+                                text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300
+                                focus:outline-none transition ease-in-out duration-150">
                                     <div>{{ __('Categories') }}</div>
 
                                     <div class="ms-1">
                                         <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4
+                                            4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                                         </svg>
                                     </div>
                                 </button>
                             </x-slot>
 
                             <x-slot name="content">
-                                <a href="{{route('accion.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out">
+                                <a href="{{route('accion.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700
+                                 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100
+                                 dark:focus:bg-gray-800 transition duration-150 ease-in-out">
                                     {{__('Action')}}
                                 </a>
-                               <a href="{{route('terror.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out">
+                               <a href="{{route('terror.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700
+                               dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100
+                                dark:focus:bg-gray-800 transition duration-150 ease-in-out">
                                 Terror</a>
-                               <a href="{{route('comedia.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out" >
+                               <a href="{{route('comedia.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700
+                                dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100
+                                 dark:focus:bg-gray-800 transition duration-150 ease-in-out" >
                                 {{__('Comedy')}}</a>
-                               <a href="{{route('romance.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out"
+                               <a href="{{route('romance.index')}}" class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700
+                                dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100
+                                dark:focus:bg-gray-800 transition duration-150 ease-in-out"
                                >
                                 {{__('Romance')}}</a>
 
@@ -87,7 +98,9 @@
         <div class="navbar-link  sm:flex sm:items-center sm:ms-6">
             <x-dropdown align="right" width="48">
                 <x-slot name="trigger">
-                    <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
+                    <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4
+                    font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800
+                    hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                         @if (Auth::user())
                         {{ Auth::user()->name }}
                         @else
@@ -95,7 +108,8 @@
                         @endif
                         <div class="ms-1">
                             <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0
+                                111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
                         </div>
                     </button>
@@ -198,7 +212,7 @@
               <ion-icon name="globe-outline"></ion-icon>
             </label>
                     @foreach (array_keys(config('locale.languages')) as $lang)
-                        
+
 
                         @if ($lang != App::getLocale())
                             <a href="{!! route('lang.swap', $lang) !!}" class="navbar-link" >

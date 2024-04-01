@@ -2,7 +2,7 @@ var lan = document.getElementById('lang').value;
 console.log(lan)
 
 const url_upcomming =
-  `https://api.themoviedb.org/3/movie/upcoming?language=${lang}-MX&page=5`;
+  `https://api.themoviedb.org/3/movie/upcoming?language=${lan}-MX&page=5`;
 const options_upcomming = {
   method: "GET",
   headers: {
@@ -20,7 +20,7 @@ fetch(url_upcomming, options_upcomming)
 
     function formatReleaseDate(dateString) {
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
-        return new Date(dateString).toLocaleDateString(`${lang}-ES`, options);
+        return new Date(dateString).toLocaleDateString(`${lan}-ES`, options);
       }
 
     json.results.forEach((movie) => {
