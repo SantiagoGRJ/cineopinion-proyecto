@@ -17,6 +17,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Closure;
 use Illuminate\Support\Facades\Http;
 
+
 class RegisteredUserController extends Controller
 {
     /**

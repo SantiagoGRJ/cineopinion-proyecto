@@ -76,7 +76,7 @@
                             <div class="title-wrapper">
                                 <p class="section-subtitle"></p>
 
-                                <h2 class="h2 section-title hero-title"> {{__('The')}} <strong> {{__('100 best movies')}} </strong> {{__('of the moment')}}
+                                <h2 class="h2 section-title hero-title"> {{__('The')}} <strong> {{__('20 best movies')}} </strong> {{__('of the moment')}}
                                 </h2>
                             </div>
 
