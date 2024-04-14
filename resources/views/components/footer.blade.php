@@ -15,9 +15,9 @@
                         <a href="{{ route('cineopinion.index') }}" class="footer-link">{{__('Index')}}</a>
                     </li>
 
-                    <li>
+                   {{--  <li>
                         <a href="#" class="footer-link">{{__('FILMS')}}</a>
-                    </li>
+                    </li> --}}
 
                     {{-- <li>
                         <a href="#" class="footer-link">Acerca de Nosotros</a>
