@@ -498,7 +498,7 @@ body.active { overflow: hidden; }
 \*-----------------------------------*/
 
 .hero {
-  background: url("../images/hero-bg.jpg") no-repeat;
+  background: url("../../public/assets/images/images/hero-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   min-height: 750px;
@@ -532,7 +532,7 @@ body.active { overflow: hidden; }
 \*-----------------------------------*/
 
 .upcoming {
-  background: url("../images/upcoming-bg.png") no-repeat;
+  background: url("../../public/assets/images/images/upcoming-bg.png") no-repeat;
   background-size: cover;
   background-position: center;
   padding-block: var(--section-padding);
@@ -735,7 +735,7 @@ body.active { overflow: hidden; }
 \*-----------------------------------*/
 
 .tv-series {
-  background: url("../images/tv-series-bg.jpg") no-repeat;
+  background: url("../../public/assets/images/images/tv-series-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   padding-block: var(--section-padding);
@@ -813,7 +813,7 @@ body.active { overflow: hidden; }
 \*-----------------------------------*/
 
 .footer-top {
-  background: url("../images/footer-bg.jpg") no-repeat;
+  background: url("../../public/assets/images/images/footer-bg.jpg") no-repeat;
   background-size: cover;
   background-position: center;
   padding-block: 80px 50px;
@@ -941,7 +941,8 @@ body.active { overflow: hidden; }
 \*-----------------------------------*/
 
 .movie-detail {
-  background: url("/images/movie-detail-bg.png") no-repeat;
+  background: url("../../public/assets/images/movie-detail-bg.png") no-repeat;
+
   background-size: cover;
   background-position: center;
   padding-top: 160px;
