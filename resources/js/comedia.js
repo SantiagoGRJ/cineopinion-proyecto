@@ -16,7 +16,7 @@ fetch(url_comedia, options_comedia)
   .then((res) => res.json())
   .then((json) => {
     const movieListElement = document.getElementById("movie_comedia");
-    let htmlContent = "";
+    let htmlContent = ``;
 
     function formatReleaseDate(dateString) {
         const options = { year: 'numeric' };
