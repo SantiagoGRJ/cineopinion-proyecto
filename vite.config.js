@@ -19,7 +19,8 @@ export default defineConfig({
                 'public/assets/js/terror.js',
                 'public/assets/js/top_100.js',
                 'public/assets/css/style.css',
-                'public/assets/images/hero-bg.jpg'
+                'public/assets/images/hero-bg.jpg',
+                
 
             ],
             refresh: true,

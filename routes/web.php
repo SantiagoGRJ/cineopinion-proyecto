@@ -57,14 +57,23 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('cineopinion', ViewsController::class);
-Route::resource('administrador',AdminsController::class);
-Route::resource('category', CategoryController::class);
+Route::middleware('auth')->group(function (){
+    Route::resource('cineopinion', ViewsController::class);
+    Route::resource('administrador',AdminsController::class);
+    Route::resource('category', CategoryController::class);
+});
 
-Route::resource('accion', AccionController::class);
-Route::resource('terror', TerrorController::class);
-Route::resource('comedia', ComediaController::class);
-Route::resource('romance',RomanceController::class);
+
+Route::middleware('auth')->group(function (){
+    Route::resource('accion', AccionController::class);
+    Route::resource('terror', TerrorController::class);
+    Route::resource('comedia', ComediaController::class);
+    Route::resource('romance',RomanceController::class);
+});
+
+
+
+
 
  /* Route::get('category/{id}', function($id){
     $categoria=$id;
